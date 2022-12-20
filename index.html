@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>SQL Joins</title>
+    <meta charset="utf-8">
+    <style>
+      body {
+        color: #eddbb3;
+        font-family: monospace;
+        line-height: 2.5em;
+      }
+
+      .remark-slide-content,
+      .remark-slide-container {
+        background-color: #252525;
+      }
+
+      .remark-slide-scaler {
+        box-shadow: none;
+      }
+
+      h1, h2, h3 {
+        color: #fcc73c;
+        font-size: 1em !important;
+        margin: 0 0 1em 0;
+      }
+
+      h1::before {
+        color: #af5f00;
+        content: "# ";
+        font-weight: normal;
+      }
+
+      h2::before {
+        color: #af5f00;
+        content: "## ";
+        font-weight: normal;
+      }
+
+      h3::before {
+        color: #af5f00;
+        content: "### ";
+        font-weight: normal;
+      }
+
+      a {
+        color: #c07998;
+      }
+
+      ul {
+        list-style: none;
+        margin-left: 2ch;
+        padding: 0;
+        text-indent: -2ch;
+      }
+
+      ul li::before {
+        color: #af5f00;
+        content: '*';
+        margin: 0 1ch 0 0;
+      }
+
+      .remark-inline-code {
+        color: #7c6f64;
+      }
+
+      img {
+        width: 100%
+      }
+    </style>
+  </head>
+  <body>
+    <textarea id="source">
+# SQL Joins
+
+David Eisinger  
+December 20, 2022
+
+---
+
+# SQL Joins
+
+At a recent standup, 
+
+---
+
+# SQL Joins
+
+There are four main joins:
+
+![](joins.png)
+
+(<https://learnsql.com/blog/learn-and-practice-sql-joins/learn-and-practice-sql-joins.png>)
+
+---
+
+# SQL Joins
+
+Let's look at an example. First, let's create a `posts` table:
+
+```sql
+CREATE TABLE posts (
+  id INTEGER PRIMARY KEY,
+  title TEXT NOT NULL,
+  content TEXT NOT NULL
+);
+```
+
+---
+
+# SQL Joins
+
+Then, a `comments` table:
+
+```sql
+CREATE TABLE comments (
+  id INTEGER PRIMARY KEY,
+  post_id INTEGER NOT NULL, 
+  content TEXT NOT NULL,
+  FOREIGN KEY(post_id) REFERENCES posts(id)
+);
+```
+
+---
+
+# SQL Joins
+
+Insert some data:
+
+```sql
+INSERT INTO posts (title, content)
+  VALUES ("First Post", "This is the first post");
+INSERT INTO posts (title, content)
+  VALUES ("Second Post", "This is the second post");
+INSERT INTO posts (title, content)
+  VALUES ("Third Post", "This is the third post");
+
+INSERT INTO comments (post_id, content)
+  VALUES (1, "What a great post");
+INSERT INTO comments (post_id, content)
+  VALUES (1, "I concur");
+INSERT INTO comments (post_id, content)
+  VALUES (3, "This post is just alright");
+```
+
+    </textarea>
+
+    <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+
+    <script>
+      var slideshow = remark.create();
+    </script>
+  </body>
+</html>
