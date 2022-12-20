@@ -176,13 +176,13 @@ Post.joins(:comments).group(:post_id)
 
 # SQL Joins
 
-What if we only want posts that **no** comments? What kind of join should we use? What else do we need to do?
+What if we only want posts that have **no** comments? What kind of join should we use? What else do we need to do?
 
 ---
 
 # SQL Joins
 
-What if we only want posts that **no** comments? What kind of join should we use? What else do we need to do?
+What if we only want posts that have **no** comments? What kind of join should we use? What else do we need to do?
 
 ```sql
 SELECT posts.*
@@ -227,13 +227,13 @@ Post.
 
 # SQL Joins
 
-What if we want posts with more than one comment?
+What if we want posts with **more than one** comment?
 
 ---
 
 # SQL Joins
 
-What if we want posts with more than one comment?
+What if we want posts with **more than one** comment?
 
 ```sql
 SELECT posts.*, COUNT(post_id) AS comment_count
