@@ -3,6 +3,8 @@
 **David Eisinger**  
 December 20, 2022
 
+<https://github.com/dce/sql-join-talk>
+
 ---
 
 # SQL Joins
@@ -257,5 +259,7 @@ Post.
 # SQL Joins
 
 That's all for today. I hope this talk was somewhat informative.
+
+<https://github.com/dce/sql-join-talk>
 
 Now I will take any questions you have.
