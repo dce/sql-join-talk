@@ -251,3 +251,11 @@ Post.
   group(:post_id).
   having("comment_count > ?", 1)
 ```
+
+---
+
+# SQL Joins
+
+That's all for today. I hope this talk was somewhat informative.
+
+Now I will take any questions you have.
