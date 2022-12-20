@@ -21,7 +21,7 @@ There are four main joins:
 
 ![](joins.png)
 
-(<https://learnsql.com/blog/learn-and-practice-sql-joins/learn-and-practice-sql-joins.png>)
+(<https://learnsql.com/blog/learn-and-practice-sql-joins/>)
 
 ---
 
