@@ -102,6 +102,10 @@ irb -r ./blog
 
 Alright, now let's try the two joins.
 
+---
+
+# SQL Joins
+
 First, an inner join:
 
 ```sql
@@ -138,13 +142,23 @@ Post.left_joins(:comments)
 
 # SQL Joins
 
-What if we only want posts that have comments? What kind of join should we use?
+You can see that, in both cases, we end up with a table that's the combination of the two joined tables.
+
+In the case of the **inner join**, there's a row for every post/comment combination, and posts without comments are excluded.
+
+In the case of the **left join**, the post without a comment is included, with `NULL` values for the comment columns.
 
 ---
 
 # SQL Joins
 
-What if we only want posts that have comments? What kind of join should we use?
+What if we want a list of posts that have comments? What kind of join should we use? What else do we need to do?
+
+---
+
+# SQL Joins
+
+What if we want a list of posts that have comments? What kind of join should we use? What else do we need to do?
 
 ```sql
 SELECT posts.*
