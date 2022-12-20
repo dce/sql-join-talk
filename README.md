@@ -178,6 +178,23 @@ Post.joins(:comments).group(:post_id)
 
 # SQL Joins
 
+What if we want a list of posts that have comments? What kind of join should we use? What else do we need to do?
+
+```sql
+SELECT DISTINCT posts.*
+FROM posts
+INNER JOIN comments
+ON comments.post_id = posts.id;
+```
+
+```ruby
+Post.joins(:comments).distinct
+```
+
+---
+
+# SQL Joins
+
 What if we only want posts that have **no** comments? What kind of join should we use? What else do we need to do?
 
 ---
